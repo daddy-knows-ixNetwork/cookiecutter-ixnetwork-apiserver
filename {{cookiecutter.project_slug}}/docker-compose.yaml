@@ -1,0 +1,19 @@
+services:
+  ixnetwork-web:
+    image: "{{ cookiecutter.IXNETWORK_API_SERVER_IMAGE }}"
+    container_name: ixnetwork-web
+    hostname: ixnetwork-web
+    privileged: true
+
+    ports:
+      - "{{ cookiecutter.IXNETWORK_API_SERVER_HOST_PORT }}:443"
+
+    volumes:
+      - ixnetwork-web-tmp:/tmp
+      - ixnetwork-web-run:/run
+
+    restart: "no"
+
+volumes:
+  ixnetwork-web-tmp:
+  ixnetwork-web-run:
