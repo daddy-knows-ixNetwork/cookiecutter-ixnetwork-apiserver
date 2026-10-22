@@ -33,30 +33,30 @@ Installed 21 packages in 29ms
  + text-unidecode==1.3
  + tzdata==2026.5
  + urllib3==2.8.0
-(.venv) $ cookiecutter .
-  [1/8] IXNETWORK_API_SERVER_IMAGE (ixnetworkweb_11.10.2508.146_image:latest): 
-  [2/8] IXNETWORK_API_SERVER_HOST_PORT (443): 
-  [3/8] IXN_USERNAME (admin): 
-  [4/8] IXN_PASSWORD (admin): 
-  [5/8] project_name (ixNetwork API Server Docker Compose): api in wsl
-  [6/8] project_slug (api-in-wsl): 
-  [7/8] project_short_description (A cookiecutter template for IxNetwork API Server): 
-  [8/8] first_version (0.1.0): 
-(.venv) $ cd api-in-wsl/
-(.venv) api-in-wsl$ ls
+(.venv) $ cookiecutter https://github.com/daddy-knows-ixNetwork/cookiecutter-ixnetwork-apiserver
+  [1/8] IXNETWORK_API_SERVER_IMAGE (ixnetworkweb_11.10.2508.146_image:latest):
+  [2/8] IXNETWORK_API_SERVER_HOST_PORT (443):
+  [3/8] IXN_USERNAME (admin):
+  [4/8] IXN_PASSWORD (admin):
+  [5/8] project_name (ixNetwork API Server Docker Compose): api in rocky
+  [6/8] project_slug (api-in-rocky):
+  [7/8] project_short_description (A cookiecutter template for IxNetwork API Server):
+  [8/8] first_version (0.1.0):
+(.venv) $ cd api-in-rocky/
+(.venv) api-in-rocky$ ls
 docker-compose.yaml
-(.venv) api-in-wsl$ docker compose up -d
-[+] up 4/4
- ✔ Network api-in-wsl_default          Created                                                                                                                                                                        0.0s
- ✔ Volume api-in-wsl_ixnetwork-web-run Created                                                                                                                                                                        0.0s
- ✔ Volume api-in-wsl_ixnetwork-web-tmp Created                                                                                                                                                                        0.0s
- ✔ Container ixnetwork-web             Started                                                                                                                                                                        0.3s
-(.venv) api-in-wsl$ 
-(.venv) api-in-wsl$ docker compose down
+(.venv) api-in-rocky$ docker compose up -d
+[+] Running 4/4
+ ✔ Network api-in-rocky_default             Created                                                                             0.2s
+ ✔ Volume "api-in-rocky_ixnetwork-web-tmp"  Created                                                                             0.0s
+ ✔ Volume "api-in-rocky_ixnetwork-web-run"  Created                                                                             0.0s
+ ✔ Container ixnetwork-web                  Started                                                                             0.2s
+(.venv) api-in-rocky$
+(.venv) api-in-rocky$ docker compose down
 [+] down 2/2
  ✔ Container ixnetwork-web    Removed                                                                                                                                                                                                                           10.5s
- ✔ Network api-in-wsl_default Removed     
- (.venv) api-in-wsl$       
+ ✔ Network api-in-rocky_default Removed     
+ (.venv) api-in-rocky$       
 ```
 
 Check out the service is running with GUI when the service is up:
